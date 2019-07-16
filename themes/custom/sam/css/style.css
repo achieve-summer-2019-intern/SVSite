@@ -1,0 +1,12 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+#main {
+    max-width: 1340px;
+    
+}
+
+h2 a {
+    margin: 20px;
+}
