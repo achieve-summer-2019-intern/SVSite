@@ -3,10 +3,87 @@
  * Subtheme specific CSS.
  */
 #main {
-    max-width: 1340px;
+    /* max-width: 1340px; */
+    max-width: 95%;
+
     
 }
 
 h2 a {
-    margin: 20px;
+    font-size: 25px;
+}
+
+#block-views-block-sport-header-name-block-1 {
+    /* left: -70px; */
+    margin-left: -67px;
+}
+
+#List-item-Right > a > img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    z-index: 1;
+    background-attachment: fixed;
+    max-height: 50px;
+}
+
+#List-item-Right > a {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: cover;
+}
+
+/* div that contains one content list item */
+#List-item-Right {
+    position: relative;
+    max-height: 50px;
+}
+
+/* one specific list item */
+#block-sam-views-block-sports-grid-scroll-list-block-1 ul > li {
+    max-height: 100px;
+    height: auto;
+    position: relative;
+    margin: 10px 0;
+}
+
+
+
+#block-sam-views-block-sports-grid-scroll-list-block-1 > div.content > div > div > div.view-content.row > div {
+    width: 100%;
+}
+
+#block-sam-views-block-sports-grid-scroll-list-block-1 > div.content > div > div {
+    position: relative;
+}
+
+#List-item-Right > div.cat {
+    z-index: 2;
+
+}
+
+#List-item-Right > div.title {
+    z-index: 2;
+    position: absolute;
+    top: 20%;
+    left: 1%;
+}
+
+#List-item-Right > div.date {
+    z-index: 2;
+}
+
+#sidebar_second {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    max-height: 1400px;
+    overflow: auto;
+}
+
+li {
+    list-style: none;
 }
