@@ -1,0 +1,30 @@
+uuid: bcfc1fd6-4068-400e-987d-b76db87dd5b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sports_grid_scroll_list
+  module:
+    - system
+    - views
+  theme:
+    - bartik
+id: views_block__sports_grid_scroll_list_block_1
+theme: bartik
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:sports_grid_scroll_list-block_1'
+settings:
+  id: 'views_block:sports_grid_scroll_list-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: '5'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

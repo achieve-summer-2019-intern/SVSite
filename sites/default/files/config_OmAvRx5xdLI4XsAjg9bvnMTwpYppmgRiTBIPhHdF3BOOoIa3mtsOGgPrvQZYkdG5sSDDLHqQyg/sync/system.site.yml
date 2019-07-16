@@ -1,0 +1,14 @@
+uuid: 2c34c7e5-5885-455d-99d3-4db2805fb68b
+name: SVSite
+mail: sam.vedernikoff@gmail.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI

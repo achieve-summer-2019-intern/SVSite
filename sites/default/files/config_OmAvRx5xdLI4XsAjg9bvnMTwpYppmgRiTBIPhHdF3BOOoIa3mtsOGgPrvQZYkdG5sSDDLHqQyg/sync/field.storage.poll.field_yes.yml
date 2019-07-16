@@ -1,0 +1,20 @@
+uuid: ac5012f8-b8da-4cc9-94dc-a318a1cf4e0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - poll
+    - text
+id: poll.field_yes
+field_name: field_yes
+entity_type: poll
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

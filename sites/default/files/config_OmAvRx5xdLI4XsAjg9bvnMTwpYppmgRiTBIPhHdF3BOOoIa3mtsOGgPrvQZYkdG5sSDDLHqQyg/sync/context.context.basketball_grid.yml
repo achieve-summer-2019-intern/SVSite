@@ -1,0 +1,63 @@
+uuid: 9082266a-3e93-43b1-9fae-74e532d61f71
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - system
+name: basketball_grid
+label: 'Basketball Grid'
+group: Sports
+description: ''
+requireAllConditions: false
+disabled: true
+conditions:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles: {  }
+    negate: 0
+    uuid: 53f29705-706f-4274-b48d-2299e79ba9e2
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path_exclusion:
+    id: request_path_exclusion
+    pages: ''
+    negate: null
+    uuid: 64fe24b9-24bb-465f-8697-779ea04ce689
+    context_mapping: {  }
+  'entity_bundle:taxonomy_term':
+    id: 'entity_bundle:taxonomy_term'
+    bundles: {  }
+    negate: 0
+    uuid: c5937532-effd-434c-ba49-65acf1560615
+    context_mapping: {  }
+  request_path:
+    id: request_path
+    pages: ''
+    negate: 0
+    uuid: a1d1f5a2-9350-448e-a887-bdeeb69e7dde
+    context_mapping: {  }
+reactions:
+  blocks:
+    blocks:
+      27624de3-4377-4744-b331-66b651646397:
+        id: 'views_block:sports_grid_top-block_1'
+        label: ''
+        provider: views
+        label_display: visible
+        views_label: ''
+        items_per_page: none
+        region: content
+        weight: '0'
+        context_mapping: {  }
+        theme: bartik
+        css_class: ''
+        unique: 0
+        context_id: basketball_grid
+        uuid: 27624de3-4377-4744-b331-66b651646397
+        override: {  }
+    id: blocks
+    saved: false
+    uuid: 9d57ce9c-74ad-4f60-992b-5bff7711885f
+    include_default_blocks: 1
+weight: 0

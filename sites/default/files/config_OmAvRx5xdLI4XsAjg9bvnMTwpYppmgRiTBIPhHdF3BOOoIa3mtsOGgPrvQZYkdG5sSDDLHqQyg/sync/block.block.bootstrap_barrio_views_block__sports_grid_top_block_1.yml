@@ -1,0 +1,30 @@
+uuid: c9b31a06-4a07-4da4-8e97-2b36a7472bac
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sports_grid_top
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_views_block__sports_grid_top_block_1
+theme: bootstrap_barrio
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:sports_grid_top-block_1'
+settings:
+  id: 'views_block:sports_grid_top-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '/node/*'
+    negate: true
+    context_mapping: {  }

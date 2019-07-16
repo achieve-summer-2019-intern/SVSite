@@ -1,0 +1,15 @@
+uuid: 49c589b6-4bb8-481d-9290-97074eca3185
+langcode: en
+status: true
+dependencies: {  }
+name: thumb_bottom_grid
+label: thumb_bottom_grid
+effects:
+  b0346b30-5eaf-4cc9-b7ef-c1a1f4edbbda:
+    uuid: b0346b30-5eaf-4cc9-b7ef-c1a1f4edbbda
+    id: image_crop
+    weight: 1
+    data:
+      width: 400
+      height: 400
+      anchor: center-center

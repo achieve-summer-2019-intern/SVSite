@@ -1,0 +1,25 @@
+uuid: 320055f2-0468-4e3d-ab2d-78964575d733
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sport_header_name
+  module:
+    - views
+  theme:
+    - sam
+id: views_block__sport_header_name_block_1
+theme: sam
+region: highlighted
+weight: -5
+provider: null
+plugin: 'views_block:sport_header_name-block_1'
+settings:
+  id: 'views_block:sport_header_name-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }

@@ -1,0 +1,18 @@
+palette:
+  top: '#25366A'
+  bottom: '#25366A'
+  bg: '#434343'
+  sidebar: '#434343'
+  sidebarborders: '#434343'
+  footer: '#292929'
+  button: '#007bff'
+  buttonhover: '#0256b1'
+  titleslogan: '#fffeff'
+  text: '#fffeff'
+  link: '#fffeff'
+logo: 'public://color/sam-f8b729d0/logo.svg'
+stylesheets:
+  - 'public://color/sam-f8b729d0/colors.css'
+files:
+  - 'public://color/sam-f8b729d0/logo.svg'
+  - 'public://color/sam-f8b729d0/colors.css'

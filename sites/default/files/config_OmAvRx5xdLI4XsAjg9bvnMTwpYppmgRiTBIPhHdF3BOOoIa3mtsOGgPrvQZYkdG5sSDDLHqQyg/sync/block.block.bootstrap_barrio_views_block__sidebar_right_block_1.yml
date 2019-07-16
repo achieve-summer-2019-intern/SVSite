@@ -1,0 +1,30 @@
+uuid: 98606836-1737-4065-9eb0-356caf4aab45
+langcode: en
+status: false
+dependencies:
+  config:
+    - views.view.sidebar_right
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap_barrio
+id: bootstrap_barrio_views_block__sidebar_right_block_1
+theme: bootstrap_barrio
+region: sidebar_second
+weight: 0
+provider: null
+plugin: 'views_block:sidebar_right-block_1'
+settings:
+  id: 'views_block:sidebar_right-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

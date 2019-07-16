@@ -1,0 +1,30 @@
+uuid: 5730f4b5-4299-4e9a-b0e6-2efa3ae05be6
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.sports_grid_bottom
+  module:
+    - system
+    - views
+  theme:
+    - sam
+id: sam_views_block__sports_grid_bottom_block_1
+theme: sam
+region: content
+weight: -3
+provider: null
+plugin: 'views_block:sports_grid_bottom-block_1'
+settings:
+  id: 'views_block:sports_grid_bottom-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/*\r\n<front>"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,30 @@
+uuid: b7bb05d1-d0b0-4039-85e7-c0a6585c377a
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.popular_footer_block
+  module:
+    - system
+    - views
+  theme:
+    - sam
+id: sam_views_block__popular_footer_block_block_1
+theme: sam
+region: footer_first
+weight: 0
+provider: null
+plugin: 'views_block:popular_footer_block-block_1'
+settings:
+  id: 'views_block:popular_footer_block-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

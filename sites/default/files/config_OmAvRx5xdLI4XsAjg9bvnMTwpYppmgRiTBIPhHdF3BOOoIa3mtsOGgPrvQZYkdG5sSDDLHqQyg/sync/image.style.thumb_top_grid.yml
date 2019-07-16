@@ -1,0 +1,15 @@
+uuid: 6dc25163-6b8d-48e3-9f8d-8e3f8d565b65
+langcode: en
+status: true
+dependencies: {  }
+name: thumb_top_grid
+label: thumb_top_grid
+effects:
+  47fe6167-42e4-4ef3-874d-0d9e49896d27:
+    uuid: 47fe6167-42e4-4ef3-874d-0d9e49896d27
+    id: image_crop
+    weight: 1
+    data:
+      width: 600
+      height: 600
+      anchor: center-center

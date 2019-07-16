@@ -1,0 +1,10 @@
+uuid: 555a3f7d-d667-4df4-8b08-e1225b1b18a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.featured_top_view
+label: 'Featured Top View'
+targetEntityType: node
+cache: true
