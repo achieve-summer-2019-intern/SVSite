@@ -2,22 +2,64 @@
  * @file
  * Subtheme specific CSS.
  */
+/* controls the logo at the top of the site */
+#navbar-top > section > a > img {
+    margin-left: 160px;
+}
+
+/* controls the text of the site name */
+#navbar-top > section > a {
+    display: inline-flex;
+    margin-right: 1rem;
+    font-size: 40px;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+.navbar {
+    background-image: linear-gradient(to left,#2E2449,#25366A);
+}
+
+/* controls the navigation bar in the header */
+#block-sam-main-menu {
+    width: 100%;
+    margin: 0 200px;
+    background: #3E4980;
+}
+
+/* controls the tabs inside the menu */
+#block-sam-main-menu > ul {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* controls the main webpage */
 #main {
     /* max-width: 1340px; */
     max-width: 95%;
-
-    
 }
 
 h2 a {
     font-size: 25px;
 }
 
-#block-views-block-sport-header-name-block-1 {
-    /* left: -70px; */
-    margin-left: -67px;
+/* controls the size of the taxonomy term */
+#taxonomy-term-8 > h2 > a > div {
+    font-size: 45px;
 }
 
+/* controls the text on top of the contents for sports grid top */
+#block-sam-views-block-sports-grid-top-block-1 h2 > a > span {
+    color: white;
+}
+
+/* controls the div that holds taxonomy term above the top grid */
+#page > div.featured-top > aside {
+    max-width: 1350px;
+}
+
+/* controls the image and sets the depth of the image */
 #List-item-Right > a > img {
     position: absolute;
     width: 100%;
@@ -29,6 +71,8 @@ h2 a {
     max-height: 50px;
 }
 
+/* access the list time for the right sidebar and put the 
+thumbnail to the background  of the div*/
 #List-item-Right > a {
     position: absolute;
     width: 100%;
@@ -43,47 +87,96 @@ h2 a {
     max-height: 50px;
 }
 
-/* one specific list item */
+/* one specific list item in the sidebar right */
 #block-sam-views-block-sports-grid-scroll-list-block-1 ul > li {
     max-height: 100px;
     height: auto;
     position: relative;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
-
-
-#block-sam-views-block-sports-grid-scroll-list-block-1 > div.content > div > div > div.view-content.row > div {
+/* extends the list item div to extend for the entire parent div */
+#block-sam-views-block-sports-grid-scroll-list-block-1 div.view-content.row > div {
     width: 100%;
 }
 
-#block-sam-views-block-sports-grid-scroll-list-block-1 > div.content > div > div {
-    position: relative;
-}
-
+/* access the category of a list item time from the sidebar right */
 #List-item-Right > div.cat {
     z-index: 2;
+    position: relative;
+    top: 5%;
+    left: 1%;
+    font-size: 10px;
 
 }
-
+/* access the title of a list item time from the sidebar right */
 #List-item-Right > div.title {
     z-index: 2;
-    position: absolute;
-    top: 20%;
+    position: relative;
+    top: 50%;
     left: 1%;
+    font-size: 14px;
 }
 
+/* access the date of a list item time from the sidebar right */
 #List-item-Right > div.date {
     z-index: 2;
+    position: relative;
+    top: 0px;
+    left: 1%;
+    font-size: 10px;
 }
 
+/* controlls the size of the sidebar right */
 #sidebar_second {
     flex: 0 0 33.333333%;
-    max-width: 33.333333%;
-    max-height: 1400px;
+    max-width: 350px;
+    max-height: 1000px;
     overflow: auto;
+    margin-right: 90px;
 }
 
+#block-sam-views-block-sports-grid-scroll-list-block-1 {
+    border-style: solid;
+    border-width: 1px;
+    padding-right: 15px;
+    margin: 0 0 20px;
+}
+
+/* remove the bullet points from the list items */
 li {
     list-style: none;
 }
+
+/* accesses the titles of the sports grid bottom grid items */
+#block-sam-views-block-sports-grid-bottom-block-1 article > header > h2 > a > span {
+    font-size: 15px;
+}
+
+/* contols all the sports grids */
+#content {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 95px;
+}
+
+#block-sam-views-block-sports-grid-scroll-list-block-1 ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 10px;
+}
+
+#block-sam-main-menu > ul > li {
+    width: 20%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+
+#sidebar_second
