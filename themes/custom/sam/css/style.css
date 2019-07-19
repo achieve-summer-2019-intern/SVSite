@@ -1,52 +1,92 @@
-/**
- * @file
- * Subtheme specific CSS.
- */
-/* controls the logo at the top of the site */
-#navbar-top > section > a > img {
-    margin-left: 160px;
-}
-
-/* controls the text of the site name */
-#navbar-top > section > a {
-    display: inline-flex;
-    margin-right: 1rem;
-    font-size: 40px;
-    line-height: inherit;
-    white-space: nowrap;
-}
-
-.navbar {
-    background-image: linear-gradient(to left,#2E2449,#25366A);
-}
-
-/* controls the navigation bar in the header */
-#block-sam-main-menu {
-    width: 100%;
-    margin: 0 200px;
-    background: #3E4980;
-}
-
-/* controls the tabs inside the menu */
-#block-sam-main-menu > ul {
-    flex-direction: row;
-    display: flex;
-    justify-content: space-evenly;
-}
-
 /* controls the main webpage */
 #main {
-    /* max-width: 1340px; */
     max-width: 95%;
 }
 
-h2 a {
-    font-size: 25px;
+/* controls the logo at the top of the site */
+#navbar-top > section > a > img {
+    margin-left: 185px;
+    max-width: 35%;
 }
+
+/* adds boxshadow to the superfish menu */
+.sf-depth-1.menuparent.sfHover {
+    box-shadow: inset 0px 5px 0px rgba(255, 255, 255);
+}
+
+/* changes the superfish menu background to white */
+.sf-menu li li{
+    background-color: white;
+}
+
+/* controls the color of the drop down menu items */
+.sf-menu li li a {
+    color: #434343;
+}
+
+/* remove padding from the top header */
+#navbar-top {
+    padding: 0px;
+}
+
+/* aligns the top header which contains the logo and the top menu bar */
+#block-sportlevels {
+    width: unset;
+}
+
+/* adjusts the padding with the top header */
+#navbar-top > section > a {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-right: 0px;
+}
+
+/* creates a gradient for the navbar */
+.navbar {
+    background-image: linear-gradient(to left,#2E2449,#25366A);
+}
+/* --------------------------------------------------------------------------------------- */
+
+/* controls the main navigation menu in the header */
+/* #block-sam-main-menu { */
+#superfish-main {
+    width: 77%;
+    margin: 0 200px;
+    background: #3E4980; 
+}
+
+ /* controls the items in the main navigation menu */
+#superfish-main > li {
+    width: 20%;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+} 
+
+/* creates a hover effect for the main navigation menu */
+#superfish-main > li:hover {
+    background-color: #4f5ca2;
+}
+
+/* aligns all the text in the dropdown of the main nav to the left */
+#superfish-main li li a {
+    text-align: left;
+}
+
+/* change the padding of the main nav bar */
+#navbar-main {
+    padding: .5rem 1rem 0 1rem;
+}
+
+/* changes the height of the main mav bar */
+ul.sf-menu {
+    line-height: .5;
+}
+
+/* ---------------------------------------------------------------------------------------- */
 
 /* controls the size of the taxonomy term */
 #taxonomy-term-8 > h2 > a > div {
-    font-size: 45px;
+    font-size: 45px; 
 }
 
 /* controls the text on top of the contents for sports grid top */
@@ -56,7 +96,13 @@ h2 a {
 
 /* controls the div that holds taxonomy term above the top grid */
 #page > div.featured-top > aside {
-    max-width: 1350px;
+    max-width: 1340px;
+}
+
+#block-sam-views-block-sports-grid-top-block-1 > h2 {
+    margin-left: 33px;
+    text-decoration: underline;
+    font-size: 22.8px;
 }
 
 /* controls the image and sets the depth of the image */
@@ -136,6 +182,7 @@ thumbnail to the background  of the div*/
     margin-right: 90px;
 }
 
+
 #block-sam-views-block-sports-grid-scroll-list-block-1 {
     border-style: solid;
     border-width: 1px;
@@ -171,12 +218,8 @@ li {
     padding-inline-start: 10px;
 }
 
-#block-sam-main-menu > ul > li {
-    width: 20%;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+
+#block-sam-views-block-popular-footer-block-block-1 div.view-content.row > div {
+    margin-top: 40px;
+    margin-left: -110px;
 }
-
-
-
-#sidebar_second
