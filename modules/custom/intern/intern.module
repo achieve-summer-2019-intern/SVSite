@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * containes intern.module
+*/
+
+use Drupal\node\Entity\Node;
+
+function createNode($count = 2019) {
+    $node = Node::create(['type' => 'page', '']);
+    $node->set('title', 'TEST PAGE ');
+
+    $body = [
+        'value:' => 'Test Page Body ',
+        'format' => 'basic_html',
+    ];
+
+    $node->set('body', $body);
+    $node->set('uid', 1);
+    $node->setPublished();
+    $node->save();
+    drupal_set_message('Node created node id: ' . $node->id());
+}

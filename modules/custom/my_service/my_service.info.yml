@@ -1,0 +1,4 @@
+name: My Drupal Service
+type: module
+description: A module mixed mastered engineered written by Sam.
+core: 8.x

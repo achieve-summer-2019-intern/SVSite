@@ -1,0 +1,23 @@
+intern.content:
+  path: '/internship'
+  defaults:
+    _controller: '\Drupal\intern\Controller\InternshipController::content'
+    _title: 'Class of Summer 2019'
+  requirements: 
+    _permission: 'access content'
+
+intern.dynamic_content:
+  path: '/internship/{count}'
+  defaults:
+    _controller: '\Drupal\intern\Controller\InternshipController::dynamicContent'
+    _title: 'Class of Summer 2019 Count'
+  requirements: 
+    _permission: 'access content'
+
+intern.first_form:
+  path: '/user-sign-up'
+  defaults:
+    _form: '\Drupal\intern\Form\FirstForm'
+    _title: 'User Sign Up Form'
+  requirements:
+    _permission: 'access content'

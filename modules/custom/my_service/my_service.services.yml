@@ -1,0 +1,4 @@
+services:
+  my_services.rental:
+    class: Drupal\my_service\RentalService
+    arguments: ['@current_user']
