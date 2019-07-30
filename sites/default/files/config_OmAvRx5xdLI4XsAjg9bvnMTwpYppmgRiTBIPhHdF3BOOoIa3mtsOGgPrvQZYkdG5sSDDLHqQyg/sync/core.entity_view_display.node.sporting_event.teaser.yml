@@ -20,13 +20,13 @@ bundle: sporting_event
 mode: teaser
 content:
   field_date:
-    type: datetime_default
+    type: datetime_custom
     weight: 1
     region: content
     label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      date_format: 'Y-m-d\ H:i:s'
     third_party_settings: {  }
   field_event_video:
     type: media_thumbnail

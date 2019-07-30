@@ -117,6 +117,7 @@ ul.sf-menu {
     width: 100%;
     top: 0;
     left: 0;
+    opacity: .3 !important;
     background-size: cover;
     z-index: 1;
     background-attachment: fixed;
@@ -222,10 +223,4 @@ li {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 10px;
-}
-
-
-#block-sam-views-block-popular-footer-block-block-1 div.view-content.row > div {
-    margin-top: 40px;
-    margin-left: -110px;
 }
