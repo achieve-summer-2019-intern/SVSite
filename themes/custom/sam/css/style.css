@@ -3,6 +3,12 @@
     max-width: 95%;
 }
 
+/* changes the color of the feedback title */
+#content > section > article > div > div.field.field--name-field-feedback-title.field--type-string.field--label-hidden.field__item.quickedit-field {
+    font-size: 32px;
+    color: black;
+}
+
 /* controls the logo at the top of the site */
 #navbar-top > section > a > img {
     margin-left: 185px;

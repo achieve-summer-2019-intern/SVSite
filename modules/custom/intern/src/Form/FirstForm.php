@@ -20,38 +20,26 @@ class FirstForm extends FormBase {
             '#description' => 'Please input your lastname',
             '#required' => TRUE,
         ];
-        $form['user_name'] = [
-            '#type' => 'textfield',
-            '#title' => 'User Name',
-            '#description' => 'Please input a username',
-            '#required' => FALSE,
-        ];
         $form['email'] = [
             '#type' => 'email',
             '#title' => 'Email',
             '#description' => 'Please input your email',
             '#required' => TRUE,
         ];
-        $form['number'] = [
-            '#type' => 'number',
-            '#title' => 'Phone Number',
-            '#description' => 'Please input your number',
-            '#required' => TRUE,
-        ];
-        $form['password_confirm'] = [
-            '#type' => 'password_confirm',
-            '#title' => 'Confirm Password',
-            '#description' => 'Please confirm your password',
+        $form['feedback'] = [
+            '#type' => 'textarea',
+            '#title' => 'Feedback',
+            '#description' => 'Please input your feedback',
             '#required' => TRUE,
         ];
         $form['actions'] = [
             '#type' => 'actions',
         ];
-
-        $form['actions']['submit'] = [
+        $form['actions']['submit'] = array(
             '#type' => 'submit',
-            '#value' => 'submit',
-        ];
+            '#value' => $this
+              ->t('Submit'),
+        );
         return $form;
     }
 
@@ -60,14 +48,19 @@ class FirstForm extends FormBase {
     }
 
     public function validateForm(array &$form, FormStateInterface $form_state) {
-        $title = $form_state->getValue('title');
-        if (empty($title)) {
+        $first_name = $form_state->getValue('first_name');
+        if (empty($first_name)) {
             $form_state->setErrorByName('title', 'Please provide a title');
         }
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {
-        $title = $form_state->getValue('title');
-        drupal_set_message("You submitted a form successfully");
+        // $title = $form_state->getValue('title');
+        // drupal_set_message("You submitted a form successfully");
+        // foreach ($form_state->getValues() as $key => $value) {
+        //     drupal_set_message($key . ': ' . $value);
+        // }
+        createFeedbackNode($form_state);
+        
     }
 }

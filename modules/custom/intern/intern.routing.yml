@@ -15,7 +15,7 @@ intern.dynamic_content:
     _permission: 'access content'
 
 intern.first_form:
-  path: '/user-sign-up'
+  path: '/submit-feedback'
   defaults:
     _form: '\Drupal\intern\Form\FirstForm'
     _title: 'User Sign Up Form'

@@ -22,3 +22,20 @@ function createNode($count = 2019) {
     $node->save();
     drupal_set_message('Node created node id: ' . $node->id());
 }
+
+function createFeedbackNode($form_state) {
+    $node = Node::create(['type' => 'feedback_form']);
+    $node->set('title', 'Feedback from ' . $form_state->getValue(['first_name']) 
+    . ' ' . $form_state->getValue(['last_name']));
+    $node->set('field_feedback_title', 'Feedback from ' . $form_state->getValue(['first_name']) 
+    . ' ' . $form_state->getValue(['last_name']));
+    $body = [
+        'value:' => 'Test Page Body ',
+        'format' => 'basic_html',
+    ];
+    $node->set('body', $form_state->getValue(['feedback']));
+    $node->set('uid', 1);
+    $node->setPublished();
+    $node->save();
+    drupal_set_message('Node created node id: ' . $node->id());
+}
