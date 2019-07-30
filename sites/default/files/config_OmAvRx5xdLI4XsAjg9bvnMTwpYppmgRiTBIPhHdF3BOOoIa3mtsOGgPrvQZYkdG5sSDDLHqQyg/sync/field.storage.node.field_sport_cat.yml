@@ -1,0 +1,20 @@
+uuid: 57ee9468-3cec-495b-bb34-22935eb70401
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_sport_cat
+field_name: field_sport_cat
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

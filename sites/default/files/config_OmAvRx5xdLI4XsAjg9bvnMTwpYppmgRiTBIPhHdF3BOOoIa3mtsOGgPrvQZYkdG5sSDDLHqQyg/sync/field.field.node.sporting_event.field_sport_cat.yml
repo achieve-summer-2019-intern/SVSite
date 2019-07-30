@@ -1,16 +1,16 @@
-uuid: b92cfc80-56be-4149-91fb-92a2d00f1fe0
+uuid: ea2431e5-7fb4-4e14-9e31-d0de0b494305
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sport_event
+    - field.storage.node.field_sport_cat
     - node.type.sporting_event
     - taxonomy.vocabulary.sport_categories
-id: node.sporting_event.field_sport_event
-field_name: field_sport_event
+id: node.sporting_event.field_sport_cat
+field_name: field_sport_cat
 entity_type: node
 bundle: sporting_event
-label: 'Sport Taxonomy Term'
+label: 'Sport Cat'
 description: ''
 required: true
 translatable: false
@@ -24,6 +24,6 @@ settings:
     sort:
       field: name
       direction: asc
-    auto_create: true
+    auto_create: false
     auto_create_bundle: ''
 field_type: entity_reference

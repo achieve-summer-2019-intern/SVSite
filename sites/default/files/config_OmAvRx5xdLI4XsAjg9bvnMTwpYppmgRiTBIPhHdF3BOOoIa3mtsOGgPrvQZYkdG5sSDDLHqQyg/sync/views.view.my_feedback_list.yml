@@ -1,15 +1,15 @@
-uuid: 2a710710-3597-46c5-bf09-8e0e0646d222
+uuid: ac50f2b9-1fe6-4227-b4b4-450df12e4989
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.full
-    - node.type.page
+    - core.entity_view_mode.node.teaser
+    - node.type.feedback_form
   module:
     - node
     - user
-id: popular_footer_block
-label: 'Popular Footer Block'
+id: my_feedback_list
+label: 'My Feedback List'
 module: views
 description: ''
 tag: ''
@@ -51,14 +51,14 @@ display:
       pager:
         type: some
         options:
-          items_per_page: 1
+          items_per_page: 5
           offset: 0
       style:
-        type: default
+        type: html_list
       row:
         type: 'entity:node'
         options:
-          view_mode: full
+          view_mode: teaser
       fields:
         title:
           id: title
@@ -124,7 +124,7 @@ display:
           table: node_field_data
           field: type
           value:
-            page: page
+            feedback_form: feedback_form
           entity_type: node
           entity_field: type
           plugin_id: bundle
@@ -144,7 +144,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: ''
+      title: 'My Feedback List'
       header: {  }
       footer: {  }
       empty: {  }
@@ -166,6 +166,23 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
+      enabled: false
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_1:
+    display_plugin: page
+    id: page_1
+    display_title: Page
+    position: 1
+    display_options:
+      display_extenders: {  }
+      path: feedback
     cache_metadata:
       max-age: -1
       contexts:

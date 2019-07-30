@@ -13,7 +13,7 @@ _core:
 id: sam_account_menu
 theme: sam
 region: top_header_form
-weight: 0
+weight: -6
 provider: null
 plugin: 'system_menu_block:account'
 settings:

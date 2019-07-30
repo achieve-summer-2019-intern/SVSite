@@ -5,7 +5,7 @@ namespace Drupal\intern\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class FirstForm extends FormBase {
+class FeedbackForm extends FormBase {
 
     public function buildForm(array $form, FormStateInterface $form_state) {
         $form['first_name'] = [
@@ -55,12 +55,7 @@ class FirstForm extends FormBase {
     }
 
     public function submitForm(array &$form, FormStateInterface $form_state) {
-        // $title = $form_state->getValue('title');
-        // drupal_set_message("You submitted a form successfully");
-        // foreach ($form_state->getValues() as $key => $value) {
-        //     drupal_set_message($key . ': ' . $value);
-        // }
+        // creates a feedback form content node
         createFeedbackNode($form_state);
-        
     }
 }

@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.sporting_event.body
     - field.field.node.sporting_event.field_date
     - field.field.node.sporting_event.field_event_video
-    - field.field.node.sporting_event.field_sport_event
+    - field.field.node.sporting_event.field_sport_cat
     - image.style.large
     - node.type.sporting_event
   module:
@@ -39,5 +39,5 @@ content:
     third_party_settings: {  }
 hidden:
   body: true
-  field_sport_event: true
+  field_sport_cat: true
   links: true

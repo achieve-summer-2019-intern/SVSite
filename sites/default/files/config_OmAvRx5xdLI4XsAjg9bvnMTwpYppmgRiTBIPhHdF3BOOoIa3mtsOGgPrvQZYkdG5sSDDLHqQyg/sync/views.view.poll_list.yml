@@ -1,6 +1,6 @@
 uuid: a02782b1-1744-4113-92e1-d49ad39c71e6
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.poll.teaser

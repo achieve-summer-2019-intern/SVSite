@@ -1,22 +1,22 @@
-uuid: 801960a2-b160-4cd1-8024-3b01e11af572
+uuid: 54420dbf-f890-4560-b2c6-bc33584936e3
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.sports_grid_top
+    - views.view.my_feedback_list
   module:
     - system
     - views
   theme:
     - sam
-id: sam_views_block__sports_grid_top_block_1
+id: views_block__my_feedback_list_block_1
 theme: sam
 region: content
-weight: -4
+weight: 0
 provider: null
-plugin: 'views_block:sports_grid_top-block_1'
+plugin: 'views_block:my_feedback_list-block_1'
 settings:
-  id: 'views_block:sports_grid_top-block_1'
+  id: 'views_block:my_feedback_list-block_1'
   label: ''
   provider: views
   label_display: visible
@@ -25,6 +25,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: '/node/*'
-    negate: true
+    pages: /feedback
+    negate: false
     context_mapping: {  }

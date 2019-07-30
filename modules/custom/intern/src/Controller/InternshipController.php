@@ -18,8 +18,7 @@ class InternshipController extends ControllerBase {
     }
 
     public function dynamicContent($count) {
-        
-        createNode($count);
+        // createNode($count);
         return array(
             '#type' => 'markup',
             '#markup' => '<div>Hello Class Summer of ' . $count . '</div>', 

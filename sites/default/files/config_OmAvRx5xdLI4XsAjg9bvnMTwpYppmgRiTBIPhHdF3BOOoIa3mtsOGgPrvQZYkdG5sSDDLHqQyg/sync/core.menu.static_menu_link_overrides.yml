@@ -1,15 +1,33 @@
 definitions:
   contact__site_page:
-    enabled: true
+    enabled: false
     menu_name: footer
     parent: ''
-    weight: 0
     expanded: false
+    weight: 0
   standard__front_page:
+    enabled: false
     menu_name: main
     parent: ''
+    expanded: true
     weight: -50
+  system__theme_settings_theme__sam:
+    menu_name: admin
+    parent: ''
+    weight: 0
     expanded: true
     enabled: true
+  user__page:
+    enabled: false
+    menu_name: account
+    parent: ''
+    expanded: false
+    weight: -10
+  user__logout:
+    enabled: false
+    menu_name: account
+    parent: ''
+    weight: 10
+    expanded: false
 _core:
   default_config_hash: jdY7AU0tU-QsjmiOw3W8vwpYMb-By--_MSFgbqKUTYM

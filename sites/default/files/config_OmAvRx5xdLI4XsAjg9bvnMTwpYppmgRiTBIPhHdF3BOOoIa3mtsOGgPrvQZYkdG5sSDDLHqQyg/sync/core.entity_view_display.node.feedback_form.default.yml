@@ -1,0 +1,42 @@
+uuid: c670acd1-6085-43d6-b0d2-f6da88601b60
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.feedback_form.body
+    - field.field.node.feedback_form.field_email
+    - field.field.node.feedback_form.field_feedback_title
+    - node.type.feedback_form
+  module:
+    - text
+    - user
+id: node.feedback_form.default
+targetEntityType: node
+bundle: feedback_form
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_email:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_feedback_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  links: true

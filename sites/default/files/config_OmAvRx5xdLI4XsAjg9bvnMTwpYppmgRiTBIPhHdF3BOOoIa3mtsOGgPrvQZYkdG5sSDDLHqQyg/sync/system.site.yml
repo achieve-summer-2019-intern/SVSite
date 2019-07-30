@@ -1,11 +1,11 @@
 uuid: 2c34c7e5-5885-455d-99d3-4db2805fb68b
-name: SVSite
+name: sam
 mail: sam.vedernikoff@gmail.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /submit-feedback
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

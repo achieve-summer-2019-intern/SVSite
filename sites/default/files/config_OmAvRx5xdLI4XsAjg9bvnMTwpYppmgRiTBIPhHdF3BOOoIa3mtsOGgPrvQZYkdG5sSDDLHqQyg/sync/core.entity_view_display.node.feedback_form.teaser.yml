@@ -1,0 +1,28 @@
+uuid: 3b6fc8c8-13f9-4f37-af9b-4d2a7d197640
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.feedback_form.body
+    - field.field.node.feedback_form.field_feedback_title
+    - node.type.feedback_form
+  module:
+    - text
+    - user
+id: node.feedback_form.teaser
+targetEntityType: node
+bundle: feedback_form
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_feedback_title: true
+  links: true

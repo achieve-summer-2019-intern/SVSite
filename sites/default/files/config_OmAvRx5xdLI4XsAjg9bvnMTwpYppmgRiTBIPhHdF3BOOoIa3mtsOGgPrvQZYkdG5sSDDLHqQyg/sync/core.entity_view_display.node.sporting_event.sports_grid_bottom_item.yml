@@ -7,7 +7,8 @@ dependencies:
     - field.field.node.sporting_event.body
     - field.field.node.sporting_event.field_date
     - field.field.node.sporting_event.field_event_video
-    - field.field.node.sporting_event.field_sport_event
+    - field.field.node.sporting_event.field_sport_cat
+    - image.style.thumb_bottom_grid
     - node.type.sporting_event
   module:
     - datetime
@@ -32,11 +33,11 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: thumb_bottom_grid
       image_link: ''
     third_party_settings: {  }
     region: content
 hidden:
   body: true
-  field_sport_event: true
+  field_sport_cat: true
   links: true

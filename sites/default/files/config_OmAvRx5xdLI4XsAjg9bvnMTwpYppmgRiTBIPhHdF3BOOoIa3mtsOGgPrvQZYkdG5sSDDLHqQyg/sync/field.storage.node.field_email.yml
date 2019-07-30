@@ -1,19 +1,20 @@
-uuid: 717a7d15-2ca8-4da8-9b29-6c96f4c054fb
+uuid: 6631578d-17c8-4ef1-8b7e-9b18866557a6
 langcode: en
 status: true
 dependencies:
   module:
     - node
-    - taxonomy
-id: node.field_sport_event
-field_name: field_sport_event
+id: node.field_email
+field_name: field_email
 entity_type: node
-type: entity_reference
+type: string
 settings:
-  target_type: taxonomy_term
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
 module: core
 locked: false
-cardinality: -1
+cardinality: 1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

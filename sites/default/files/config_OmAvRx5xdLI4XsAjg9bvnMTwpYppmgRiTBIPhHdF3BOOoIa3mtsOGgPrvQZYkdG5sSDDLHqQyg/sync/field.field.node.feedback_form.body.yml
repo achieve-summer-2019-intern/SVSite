@@ -1,0 +1,22 @@
+uuid: 3dbddf12-0061-4c32-a086-e9a4ed5a6334
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.feedback_form
+  module:
+    - text
+id: node.feedback_form.body
+field_name: body
+entity_type: node
+bundle: feedback_form
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
