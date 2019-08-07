@@ -44,10 +44,10 @@ trait SchemaActionTrait {
     $types = static::actionTypes();
     foreach ($types as $type) {
       if ($type == $action_type || empty($action_type) || $type == 'All') {
-        $list = array_merge(array_keys(static::actionProperties($type)), $list);
+        $list = array_merge($list, array_keys(static::actionProperties($type)));
       }
     }
-    $list = array_merge(array_keys(static::actionProperties('All')), $list);
+    $list = array_merge($list, array_keys(static::actionProperties('All')));
     return $list;
   }
 
@@ -619,6 +619,12 @@ trait SchemaActionTrait {
             'formKeys' => '',
             'form' => '',
             'description' => "The placeholder for the query, i.e. required name=search_term_string.",
+          ],
+          'target' => [
+            'class' => 'SchemaEntryPointBase',
+            'formKeys' => 'entryPointFormKeys',
+            'form' => 'entryPointForm',
+            'description' => "Indicates a target EntryPoint for an Action.",
           ],
         ];
 

@@ -1,0 +1,28 @@
+.developer-app-list__header {
+    padding: 0.8rem 1.5rem;
+}
+
+.developer-app-list__header, .developer-app-list .row--info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.developer-app-list__header > div, .developer-app-list .row--info > div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 calc(100% / 3);
+    flex: 1 0 calc(100% / 3);
+}
+
+.developer-app-list .row--info, .developer-app-list .row--warning {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.developer-app-list .dropbutton-wrapper {
+    display: inline-block;
+}
+
+.developer-app-list .not-collapsible {
+    display: block;
+}

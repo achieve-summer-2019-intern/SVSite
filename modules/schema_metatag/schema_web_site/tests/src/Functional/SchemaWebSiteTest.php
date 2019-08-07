@@ -37,6 +37,9 @@ class SchemaWebSiteTest extends SchemaMetatagTagsTestBase {
     'schema_web_site_type' => 'SchemaWebSiteType',
     'schema_web_site_url' => 'SchemaWebSiteUrl',
     'schema_web_site_potential_action' => 'SchemaWebSitePotentialAction',
+    'schema_web_site_in_language' => 'SchemaWebSiteInLanguage',
+    'schema_web_site_translation_of_work' => 'SchemaWebSiteTranslationOfWork',
+    'schema_web_site_work_translation' => 'SchemaWebSiteWorkTranslation',
   ];
 
 }

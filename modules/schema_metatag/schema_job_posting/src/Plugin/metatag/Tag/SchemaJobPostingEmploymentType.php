@@ -14,13 +14,13 @@ use Drupal\schema_metatag\Plugin\metatag\Tag\SchemaNameBase;
  * @MetatagTag(
  *   id = "schema_job_posting_employment_type",
  *   label = @Translation("employmentType"),
- *   description = @Translation("RECOMMENDED BY GOOGLE. The employment type of the jobPosting. Should be one of FULL-TIME, PART-TIME, CONTRACT, TEMPORARY, SEASONAL, INTERNSHIP."),
+ *   description = @Translation("RECOMMENDED BY GOOGLE. The employment type of the jobPosting. Should be one of FULL_TIME, PART_TIME, CONTRACTOR, TEMPORARY, INTERN, VOLUNTEER, PER_DIEM, OTHER."),
  *   name = "employmentType",
  *   group = "schema_job_posting",
  *   weight = -5,
  *   type = "string",
  *   secure = FALSE,
- *   multiple = FALSE
+ *   multiple = TRUE
  * )
  */
 class SchemaJobPostingEmploymentType extends SchemaNameBase {

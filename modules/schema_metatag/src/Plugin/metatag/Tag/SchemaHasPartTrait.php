@@ -28,10 +28,10 @@ trait SchemaHasPartTrait {
     $types = static::hasPartObjects();
     foreach ($types as $type) {
       if ($type == $object_type || empty($object_type)) {
-        $list = array_merge(array_keys(static::hasPartProperties($type)), $list);
+        $list = array_merge($list, array_keys(static::hasPartProperties($type)));
       }
     }
-    $list = array_merge(array_keys(static::hasPartProperties('All')), $list);
+    $list = array_merge($list, array_keys(static::hasPartProperties('All')));
     return $list;
   }
 

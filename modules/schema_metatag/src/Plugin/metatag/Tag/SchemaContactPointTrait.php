@@ -22,10 +22,12 @@ trait SchemaContactPointTrait {
       'areaServed',
       'availableLanguage',
       'contactType',
+      'contactOption',
       'email',
       'faxnumber',
       'productSupported',
       'telephone',
+      'url',
     ];
   }
 
@@ -80,6 +82,15 @@ trait SchemaContactPointTrait {
       '#description' => $this->t('An internationalized version of the phone number, starting with the "+" symbol and country code (+1 in the US and Canada). Examples: "+1-800-555-1212", "+44-2078225951"'),
     ];
 
+    $form['url'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('url'),
+      '#default_value' => !empty($value['url']) ? $value['url'] : '',
+      '#maxlength' => 255,
+      '#required' => $input_values['#required'],
+      '#description' => $this->t('URL of place, organization'),
+    ];
+
     $form['availableLanguage'] = [
       '#type' => 'textfield',
       '#title' => $this->t('availableLanguage'),
@@ -96,6 +107,16 @@ trait SchemaContactPointTrait {
       '#maxlength' => 255,
       '#required' => $input_values['#required'],
       '#description' => $this->t('One of the following: customer service, technical support, billing support, bill payment, sales, reservations, credit card support, emergency, baggage tracking, roadside assistance, package tracking.'),
+    ];
+
+    $form['contactOption'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('contactOption'),
+      '#default_value' => !empty($value['contactOption']) ? $value['contactOption'] : '',
+      '#maxlength' => 255,
+      '#required' => $input_values['#required'],
+      '#description' => $this->t('One of the following: HearingImpairedSupported, TollFree.'),
+      '#states' => $visibility,
     ];
 
     $input_values = [

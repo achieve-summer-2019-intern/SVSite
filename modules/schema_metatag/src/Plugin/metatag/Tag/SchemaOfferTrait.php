@@ -26,6 +26,7 @@ trait SchemaOfferTrait {
       'availability',
       'availabilityStarts',
       'availabilityEnds',
+      'itemCondition',
       'validFrom',
       'category',
       'eligibleRegion',
@@ -103,6 +104,15 @@ trait SchemaOfferTrait {
       '#maxlength' => 255,
       '#required' => $input_values['#required'],
       '#description' => $this->t('The URL to the store where the offer can be acquired.'),
+    ];
+
+    $form['itemCondition'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('condition'),
+      '#default_value' => !empty($value['itemCondition']) ? $value['itemCondition'] : '',
+      '#maxlength' => 255,
+      '#required' => $input_values['#required'],
+      '#description' => $this->t('The condition of this item—for example Damaged Condition, New Condition, Used Condition, Refurbished Condition.'),
     ];
 
     $form['availability'] = [

@@ -1,0 +1,189 @@
+<?php
+
+/**
+ * @file
+ * Apigee Edge UI module for Drupal.
+ *
+ * Copyright (C) 2019 PRONOVIX GROUP BVBA.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301,
+ * USA.
+ */
+
+/**
+ * Main module file for Apigee Edge UI.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Implements hook_theme().
+ */
+function apigee_edge_ui_theme(array $existing, string $type, string $theme, string $path): array {
+  return [
+    'developer_app' => [
+      'render element' => 'elements',
+    ],
+    'app_credential' => [
+      'render element' => 'elements',
+    ],
+    'app_credential_product_list' => [
+      'render element' => 'elements',
+    ],
+    'developer_app_list_for_developer' => [
+      'variables' => [
+        'header' => NULL,
+        'apps' => NULL,
+        'attributes' => [],
+        'empty' => '',
+        'show_collapse_link' => TRUE,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for developer_app template.
+ */
+function template_preprocess_developer_app(array &$variables): void {
+  // Helpful $content variable for the developer_app template.
+  $variables['content'] = [];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+
+  $variables['attributes']['class'][] = 'developer-app';
+}
+
+/**
+ * Prepares variables for developer_app_list_for_developer template.
+ */
+function template_preprocess_developer_app_list_for_developer(array &$variables): void {
+  // Format the app list header based on template_preprocess_table().
+  if (!empty($variables['header'])) {
+    $ts = tablesort_init($variables['header']);
+
+    foreach ($variables['header'] as $col_key => $cell) {
+      if (!is_array($cell)) {
+        $cell_content = $cell;
+        $cell_attributes = new Attribute();
+      }
+      else {
+        $cell_content = '';
+        if (isset($cell['data'])) {
+          $cell_content = $cell['data'];
+          unset($cell['data']);
+        }
+
+        tablesort_header($cell_content, $cell, $variables['header'], $ts);
+
+        // tablesort_header() removes the 'sort' and 'field' keys.
+        $cell_attributes = new Attribute($cell);
+      }
+      $variables['header'][$col_key] = [];
+      $variables['header'][$col_key]['attributes'] = $cell_attributes;
+      $variables['header'][$col_key]['content'] = $cell_content;
+    }
+
+    $variables['header_attributes'] = new Attribute(['class' => 'developer-app-list__header']);
+  }
+
+  // Format the app list.
+  if (!empty($variables['apps'])) {
+    $variables['apps_attributes'] = new Attribute(['class' => 'developer-app-list__apps']);
+    $variables['show_text'] = t('Show details');
+    $variables['hide_text'] = t('Hide details');
+  }
+  else {
+    $variables['empty_attributes'] = new Attribute(['class' => 'developer-app-list__apps--empty']);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function apigee_edge_ui_form_alter(array &$form, FormStateInterface $form_state, string $form_id): void {
+  $app_edit_form_ids = [
+    'developer_app_edit_for_developer_form',
+    'developer_app_edit_form',
+  ];
+
+  $app_add_form_ids = [
+    'developer_app_add_for_developer_form',
+    'developer_app_add_form',
+  ];
+
+  if (in_array($form_id, $app_add_form_ids)) {
+    if (isset($form['api_products'])) {
+      $form['api_products']['#attributes']['class'][] = 'developer-app-form__products';
+    }
+    $form['#attributes']['class'][] = 'developer-app-form--add';
+  }
+  elseif (in_array($form_id, $app_edit_form_ids)) {
+    $app_label = \Drupal::service('entity_type.manager')
+      ->getDefinition('developer_app')
+      ->getSingularLabel();
+    $form['actions']['submit']['#value'] = t('Save @app', ['@app' => $app_label]);
+    $form['actions']['delete']['#title'] = t('Delete @app', ['@app' => $app_label]);
+    $form['actions']['delete']['#weight'] = 1;
+    $form['#attributes']['class'][] = 'developer-app-form--edit';
+
+    $detail_fields = [
+      'callbackUrl',
+      'description',
+      'displayName',
+    ];
+
+    // Add details wrapper to non-credential info fields.
+    $form['details'] = [
+      '#type' => 'fieldset',
+      '#title' => t('Details'),
+      '#tag' => 'div',
+      '#attributes' => [
+        'class' => [
+          'developer-app-form__details',
+        ],
+      ],
+    ];
+
+    foreach ($detail_fields as $field) {
+      $form['details'][$field] = $form[$field];
+      hide($form[$field]);
+    }
+
+    if (isset($form['credential'])) {
+      foreach (Element::children($form['credential']) as $credential) {
+        $form['credential'][$credential]['#attributes']['class'][] = 'developer-app-form__credential';
+        $form['credential'][$credential]['api_products']['#attributes']['class'][] = 'developer-app-form__products';
+      }
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_app_credential_product_list().
+ */
+function apigee_edge_ui_preprocess_app_credential_product_list(array &$variables): void {
+  $num_of_visible_rows = 5;
+  if (sizeof($variables['content']) <= $num_of_visible_rows) {
+    return;
+  }
+  $variables['#attached']['library'][] = 'apigee_edge_ui/apigee_edge_ui.app_credential_product_list';
+  $variables['num_of_visible_rows'] = $num_of_visible_rows;
+  $variables['show_more_btn_attrs'] = new Attribute(['class' => []]);
+  $variables['show_less_btn_attrs'] = new Attribute(['class' => []]);
+}

@@ -103,6 +103,9 @@ class SchemaMetatagManagerTest extends UnitTestCase {
    * Provides pivot data.
    *
    * @return array
+   *  - name: name of the data set.
+   *    - original: original data.
+   *    - desired: desired result.
    */
   public function pivotData() {
     $values = [
@@ -130,6 +133,12 @@ class SchemaMetatagManagerTest extends UnitTestCase {
    * Provides array data.
    *
    * @return array
+   *  - name: name of the data set.
+   *    - tests: array of the tests this data set applies to.
+   *    - original: original data array.
+   *    - original_serialized: serialized version of original data.
+   *    - desired: desired result as array.
+   *    - desired_serialized: desired result, serialized.
    */
   public function arrayData() {
     $values['Dirty input'] = [
@@ -176,7 +185,7 @@ class SchemaMetatagManagerTest extends UnitTestCase {
       ],
       'a:2:{s:5:"@type";s:12:"Organization";s:8:"memberOf";a:3:{s:5:"@type";s:12:"Organization";s:4:"name";s:4:"test";s:11:"description";s:9:"more text";}}',
     ];
-    $values['Nested array2'] = [
+    $values['Nested array 2 levels deep'] = [
       [
         'arraytrim',
         'serialize',
@@ -211,7 +220,7 @@ class SchemaMetatagManagerTest extends UnitTestCase {
       ],
       'a:2:{s:5:"@type";s:12:"Organization";s:11:"publishedIn";a:4:{s:5:"@type";s:12:"CreativeWork";s:4:"name";s:4:"test";s:11:"description";s:9:"more text";s:6:"level3";a:2:{s:5:"@type";s:4:"Book";s:4:"name";s:9:"Book Name";}}}',
     ];
-    $values['Nested array3'] = [
+    $values['Nested array with nested type only'] = [
       [
         'arraytrim',
         'serialize',
@@ -249,7 +258,7 @@ class SchemaMetatagManagerTest extends UnitTestCase {
       ],
       'a:2:{s:5:"@type";s:12:"Organization";s:12:"anotherThing";a:4:{s:5:"@type";s:5:"Thing";s:4:"name";s:4:"test";s:11:"description";s:9:"more text";s:6:"level3";a:2:{s:5:"@type";s:4:"Book";s:4:"name";s:9:"Book Name";}}}',
     ];
-    $values['Empty array'] = [
+    $values['Empty nested array'] = [
       [
         'arraytrim',
         'serialize',
@@ -257,18 +266,53 @@ class SchemaMetatagManagerTest extends UnitTestCase {
         'explode',
       ],
       [
-        'name' => [
-          'Organization' => [
-            '@type' => '',
-            'name' => '',
-          ],
+        'name' => [],
+        'Organization' => [
+          '@type' => '',
+          'name' => '',
         ],
       ],
-      'a:1:{s:4:"name";a:1:{s:12:"Organization";a:2:{s:5:"@type";s:0:"";s:4:"name";s:0:"";}}}',
+      'a:2:{s:4:"name";a:0:{}s:12:"Organization";a:2:{s:5:"@type";s:0:"";s:4:"name";s:0:"";}}',
       [],
       '',
     ];
-    $values['Empty parts'] = [
+    $values['Missing type to empty array'] = [
+      [
+        'arraytrim',
+        'serialize',
+        'unserialize',
+        'explode',
+      ],
+      [
+        'organization' => [
+          '@type' => '',
+          'name' => 'test',
+          'description' => 'test2',
+        ],
+      ],
+      'a:1:{s:12:"organization";a:3:{s:5:"@type";s:0:"";s:4:"name";s:4:"test";s:11:"description";s:5:"test2";}}',
+      [],
+      '',
+    ];
+    $values['Type only to empty array'] = [
+      [
+        'arraytrim',
+        'serialize',
+        'unserialize',
+        'explode',
+      ],
+      [
+        'organization' => [
+          '@type' => 'Organization',
+          'name' => '',
+          'description' => '',
+        ],
+      ],
+      'a:1:{s:12:"organization";a:3:{s:5:"@type";s:12:"Organization";s:4:"name";s:0:"";s:11:"description";s:0:"";}}',
+      [],
+      '',
+    ];
+    $values['Array with empty parts'] = [
       ['recompute'],
       [
         '@type' => 'Organization',
@@ -295,6 +339,9 @@ class SchemaMetatagManagerTest extends UnitTestCase {
    * Provides string data.
    *
    * @return array
+   *  - name: name of the data set.
+   *    - original: original data.
+   *    - desired: desired result.
    */
   public function stringData() {
     $values = [
@@ -314,6 +361,9 @@ class SchemaMetatagManagerTest extends UnitTestCase {
    * Provides json data.
    *
    * @return array
+   *  - name: name of the data set.
+   *    - original: original data.
+   *    - desired: desired result.
    */
   public function jsonData() {
     $values = [

@@ -17,10 +17,10 @@ metatag.metatag_tag.schema_service_type:
   type: text
   label: '@type'
 metatag.metatag_tag.schema_service_aggregate_rating:
-  type: label
+  type: text
   label: 'aggregateRating'
 metatag.metatag_tag.schema_service_review:
-  type: label
+  type: text
   label: 'review'
 metatag.metatag_tag.schema_service_brand:
   type: text

@@ -1,0 +1,16 @@
+name: Apigee Edge UI
+description: UI enhancements for Apigee Edge module.
+package: Apigee
+
+dependencies:
+  - apigee_edge:apigee_edge
+
+type: module
+# core: 8.x
+php: "7.1"
+
+# Information added by Drupal.org packaging script on 2019-07-18
+version: '8.x-1.3'
+core: '8.x'
+project: 'apigee_edge_ui'
+datestamp: 1563443895

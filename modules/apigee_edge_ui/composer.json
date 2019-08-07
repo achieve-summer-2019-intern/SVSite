@@ -1,0 +1,10 @@
+{
+    "name": "drupal/apigee_edge_ui",
+    "type": "drupal-module",
+    "description": "UI enhancements for Apigee Edge",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "drupal/apigee_edge": "^1.0"
+    }
+}

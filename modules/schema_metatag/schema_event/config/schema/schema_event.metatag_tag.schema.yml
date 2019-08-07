@@ -20,7 +20,7 @@ metatag.metatag_tag.schema_event_location:
   type: text
   label: 'location'
 metatag.metatag_tag.schema_event_name:
-  type: label
+  type: text
   label: 'name'
 metatag.metatag_tag.schema_event_offers:
   type: text
@@ -29,7 +29,7 @@ metatag.metatag_tag.schema_event_performer:
   type: text
   label: 'performer'
 metatag.metatag_tag.schema_event_start_date:
-  type: label
+  type: text
   label: 'startDate'
 metatag.metatag_tag.schema_event_type:
   type: text
@@ -38,8 +38,11 @@ metatag.metatag_tag.schema_event_url:
   type: text
   label: 'url'
 metatag.metatag_tag.schema_event_aggregate_rating:
-  type: label
+  type: text
   label: 'aggregateRating'
 metatag.metatag_tag.schema_event_review:
-  type: label
+  type: text
   label: 'review'
+metatag.metatag_tag.schema_event_is_accessible_for_free:
+  type: text
+  label: 'isAccessibleForFree'

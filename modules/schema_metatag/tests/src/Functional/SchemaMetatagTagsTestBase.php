@@ -116,6 +116,7 @@ abstract class SchemaMetatagTagsTestBase extends BrowserTestBase {
 
       // Configure all the tag values and post the results.
       $expected_output_values = $raw_values = $form_values = [];
+      $form_values = [];
       foreach ($this->schemaTags as $tag_name => $class_name) {
 
         // Transform the tag_name to the camelCase key used in the form.
@@ -151,29 +152,30 @@ abstract class SchemaMetatagTagsTestBase extends BrowserTestBase {
                   foreach ($value2 as $key3 => $value3) {
                     if (is_array($value3)) {
                       foreach ($value3 as $key4 => $value4) {
-                        $keys = implode('][', [$key, $key2, $key3, $key4]);
-                        $form_values[$tag_name . '[' . $keys . ']'] = $value4;
+                        $keystring = implode('][', [$key, $key2, $key3, $key4]);
+                        $form_values[$tag_name . '[' . $keystring . ']'] = $value4;
                       }
                     }
                     else {
-                      $keys = implode('][', [$key, $key2, $key3]);
-                      $form_values[$tag_name . '[' . $keys . ']'] = $value3;
+                      $keystring = implode('][', [$key, $key2, $key3]);
+                      $form_values[$tag_name . '[' . $keystring . ']'] = $value3;
                     }
                   }
                 }
                 else {
-                  $keys = implode('][', [$key, $key2]);
-                  $form_values[$tag_name . '[' . $keys . ']'] = $value2;
+                  $keystring = implode('][', [$key, $key2]);
+                  $form_values[$tag_name . '[' . $keystring . ']'] = $value2;
                 }
               }
             }
             else {
-              $keys = implode('][', [$key]);
-              $form_values[$tag_name . '[' . $keys . ']'] = $value;
+              $keystring = implode('][', [$key]);
+              $form_values[$tag_name . '[' . $keystring . ']'] = $value;
             }
           }
         }
       }
+
       $this->drupalPostForm(NULL, $form_values, 'Save');
       $this->assertSession()->pageTextContains($save_message, 'Configuration successfully posted.');
 

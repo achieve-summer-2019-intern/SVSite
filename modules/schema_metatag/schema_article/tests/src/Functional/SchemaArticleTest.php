@@ -46,6 +46,7 @@ class SchemaArticleTest extends SchemaMetatagTagsTestBase {
     'schema_article_type' => 'SchemaArticleType',
     'schema_article_aggregate_rating' => 'SchemaArticleAggregateRating',
     'schema_article_review' => 'SchemaArticleReview',
+    'schema_article_speakable' => 'SchemaArticleSpeakable',
   ];
 
 }

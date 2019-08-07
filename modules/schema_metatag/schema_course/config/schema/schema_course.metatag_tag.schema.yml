@@ -2,7 +2,7 @@
 # could get longer, especially ones which use a textarea field instead of a
 # textfield.
 metatag.metatag_tag.schema_course_course_code:
-  type: label
+  type: text
   label: 'courseCode'
 metatag.metatag_tag.schema_course_course_prerequisites:
   type: text
@@ -11,10 +11,10 @@ metatag.metatag_tag.schema_course_description:
   type: text
   label: 'description'
 metatag.metatag_tag.schema_course_educational_credential_awarded:
-  type: label
+  type: text
   label: 'educationalCredentialAwarded'
 metatag.metatag_tag.schema_course_name:
-  type: label
+  type: text
   label: 'name'
 metatag.metatag_tag.schema_course_provider:
   type: text

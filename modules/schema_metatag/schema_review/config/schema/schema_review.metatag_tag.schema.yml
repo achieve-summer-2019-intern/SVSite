@@ -17,8 +17,8 @@ metatag.metatag_tag.schema_review_author:
   type: text
   label: 'author'
 metatag.metatag_tag.schema_review_date_published:
-  type: label
+  type: text
   label: 'datePublished'
 metatag.metatag_tag.schema_review_review_rating:
-  type: label
+  type: text
   label: 'reviewRating'

@@ -1,0 +1,14 @@
+apigee_edge_ui.app_listing:
+  version: 1.0
+  css:
+    theme:
+      css/apigee_edge_ui.app_listing.css: {}
+
+apigee_edge_ui.app_credential_product_list:
+  css:
+    theme:
+      css/app_credential_product_list.css: {}
+  js:
+    js/app_credential_product_list.js: {}
+  dependencies:
+    - core/drupalSettings

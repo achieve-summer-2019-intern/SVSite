@@ -35,10 +35,10 @@ metatag.metatag_tag.schema_video_object_upload_date:
   type: text
   label: 'uploadDate'
 metatag.metatag_tag.schema_video_object_aggregate_rating:
-  type: label
+  type: text
   label: 'aggregateRating'
 metatag.metatag_tag.schema_video_object_review:
-  type: label
+  type: text
   label: 'review'
 metatag.metatag_tag.schema_video_object_transcript:
   type: text

@@ -1,0 +1,100 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a Developer App list for Developer.
+ *
+ * Available variables:
+ * - attributes: HTML attributes to apply to the main <div> tag.
+ * - header: The App listing header cells. Each cell contains the following properties:
+ *   - tag: The HTML tag name to use; either 'th' or 'td'.
+ *   - attributes: HTML attributes to apply to the tag.
+ *   - content: A localized string for the title of the column.
+ *   - field: Field name (required for column sorting).
+ *   - sort: Default sort order for this column ("asc" or "desc").
+ * - header_attributes: HTML attributes to apply to the header.
+ * - apps: The array of Apps. Each app contains the following properties:
+ *   - attributes: HTML attributes to apply to the App.
+ *   - name: The App's name.
+ *   - status: The App's status in a status_property render array.
+ *   - operations: Link which can be accessed in accordance with the App.
+ *   - warning_message: The App's warning message if there's any.
+ *   - warning_attributes: The warning message's attributes.
+ * - apps_attributes: HTML attributes to apply to the apps.
+ * - show_collapse_link: indicates whether the Hide/Show links should be there or the warning message should always be
+ *   visible under the App info.
+ * - show_text: The test to be shown when the Hide/Show links are there in closed state.
+ * - hide_text: The test to be shown when the Hide/Show links are there in open state.
+ * - empty: The message to display in an extra row if table does not have
+ *   any rows.
+ * - empty_attributes: HTML attributes to apply to the empty list.
+ *
+ * @see template_preprocess_developer_app_list_for_developer()
+ *
+ * @ingroup themeable
+ */
+#}
+<div {{ attributes }}>
+
+  {# Apps start #}
+  {% if apps %}
+
+  {# Header start #}
+  {% if header %}
+    <div{{ header_attributes }}>
+      {% for cell in header %}
+        <div{{ cell.attributes }}>
+          {{- cell.content -}}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {# Header end #}
+
+  <div{{ apps_attributes }}>
+    {% for app in apps %}
+
+      {# App info start #}
+      <div{{ app.attributes }}>
+        <div class="app-row__name">
+          {{ app.name }}
+        </div>
+        <div class="app-row__status">
+          {{ app.status }}
+          {% if show_collapse_link and app.warning_message %}
+            <a href="#{{ app.warning_attributes.id }}" class="toggle--warning closed" data-text-open="{{ show_text }}" data-text-closed="{{ hide_text }}">
+              <span class="ui-icon-triangle-1-e ui-icon"></span><span class="text">{{ show_text }}</span>
+            </a>
+          {% endif %}
+        </div>
+        <div class="app-row__operations">
+          {{ app.operations }}
+        </div>
+      </div>
+      {# App info end #}
+
+      {# App warning start #}
+      {% if app.warning_message %}
+
+        {% if show_collapse_link %}
+          <div{{ app.warning_attributes }}>
+        {% else %}
+          <div{{ app.warning_attributes.addClass('not-collapsible') }}>
+        {% endif %}
+
+          {{ app.warning_message }}
+        </div>
+      {% endif %}
+      {# App warning end #}
+
+    {% endfor %}
+  </div>
+  {# Apps end #}
+
+  {# Empty start #}
+  {% elseif empty %}
+    <div{{ empty_attributes }}>
+      {{ empty }}
+    </div>
+  {% endif %}
+  {# Empty end #}
+</div>

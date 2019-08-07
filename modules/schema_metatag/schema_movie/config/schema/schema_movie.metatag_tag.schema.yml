@@ -23,7 +23,7 @@ metatag.metatag_tag.schema_movie_music_by:
   type: text
   label: 'musicBy'
 metatag.metatag_tag.schema_movie_name:
-  type: label
+  type: text
   label: 'name'
 metatag.metatag_tag.schema_movie_producer:
   type: text

@@ -3,6 +3,7 @@
 namespace Drupal\schema_web_site\Plugin\metatag\Tag;
 
 use Drupal\schema_metatag\Plugin\metatag\Tag\SchemaActionBase;
+use Drupal\schema_metatag\Plugin\metatag\Tag\SchemaEntryPointBase;
 
 /**
  * Provides a plugin for the 'schema_web_site_potential_action' meta tag.
@@ -48,6 +49,10 @@ class SchemaWebSitePotentialAction extends SchemaActionBase {
 
         case '@type':
           $items[$key] = 'SearchAction';
+          break;
+
+        case 'target':
+          $items[$key] = SchemaEntryPointBase::testValue();
           break;
 
         default:

@@ -25,3 +25,21 @@ metatag.metatag_tag.schema_web_page_description:
 metatag.metatag_tag.schema_web_page_publisher:
   type: text
   label: 'publisher'
+metatag.metatag_tag.schema_web_page_speakable:
+  type: text
+  label: 'speakable'
+metatag.metatag_tag.schema_web_page_speakable:
+  type: text
+  label: 'speakable'
+metatag.metatag_tag.schema_web_page_speakable:
+  type: text
+  label: 'speakable'
+metatag.metatag_tag.schema_web_page_in_language:
+  type: text
+  label: 'language'
+metatag.metatag_tag.schema_web_page_translation_of_work:
+  type: text
+  label: 'translationOfWork'
+metatag.metatag_tag.schema_web_page_work_translation:
+  type: text
+  label: 'workTranslation'
